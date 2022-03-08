@@ -3,7 +3,7 @@
 
 > Tools for Working with [R-universe](https://r-universe.dev)
 
-## Installation
+## Installation and docs
 
 You can install the development version of universe from r-universe:
 
@@ -11,6 +11,8 @@ You can install the development version of universe from r-universe:
 install.packages("universe", repos = "https://ropensci.r-universe.dev")
 ```
 
+Documentation is available on https://docs.ropensci.org/universe
+ 
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
@@ -21,3 +23,4 @@ universe::add("ropensci")
 install.packages("magick")
 ```
 
+For more details see the documentation for [runiverse::add()](https://docs.ropensci.org/universe/reference/add.html).
