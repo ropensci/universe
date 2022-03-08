@@ -13,7 +13,7 @@ install.packages("universe", repos = "https://ropensci.r-universe.dev")
 
 Documentation is available on https://docs.ropensci.org/universe
  
-## Example
+## Enable a repository
 
 This is a basic example which shows you how to solve a common problem:
 
