@@ -11,9 +11,12 @@
 #' @returns the updated list of repositories
 add <- function(universe = 'ropensci') {
   repos <- getOption("repos")
-  # R-universe depends on CRAN
-  if(is.na(repos['CRAN'])){
+  # r-universe packages depend on CRAN
+  cran <- repos['CRAN']
+  if(is.na(cran)){
     repos <- c(repos, CRAN = 'https://cloud.r-project.org')
+  } else if(cran == '@CRAN@'){
+    repos['CRAN'] <- 'https://cloud.r-project.org'
   }
   for (x in universe){
     name <- gsub("\\W", "", universe)
