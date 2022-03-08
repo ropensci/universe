@@ -2,7 +2,7 @@
 % Please edit documentation in R/addrepo.R
 \name{add}
 \alias{add}
-\title{Enable a universe}
+\title{Enable a package repository from r-universe}
 \usage{
 add(universe = "ropensci")
 }
@@ -14,8 +14,13 @@ part of \verb{https://ropensci.r-universe.dev}.}
 the updated list of repositories
 }
 \description{
-Add r-universe package repositories to your \code{options("repos")} such
-that they are enabled by default in \code{install.packages()}. This is not
-permanent, so you need to save this in your \verb{~/.Rprofile} in order to
-automatically enable this for every R session.
+Adds r-universe package repositories to your \code{options("repos")} such
+that they are used by default in \code{install.packages()}. If the universe
+was already enabled, it will not be added again, hence it is harmless
+to call this function multiple times.
+}
+\details{
+Note that changes to your options are not permanent. To automatically
+enable a repository for every R session, you can call this function in
+your \code{\link[=Startup]{~/.Rprofile}} script.
 }

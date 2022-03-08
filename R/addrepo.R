@@ -1,9 +1,13 @@
-#' Enable a universe
+#' Enable a package repository from r-universe
 #'
-#' Add r-universe package repositories to your `options("repos")` such
-#' that they are enabled by default in `install.packages()`. This is not
-#' permanent, so you need to save this in your `~/.Rprofile` in order to
-#' automatically enable this for every R session.
+#' Adds r-universe package repositories to your `options("repos")` such
+#' that they are used by default in `install.packages()`. If the universe
+#' was already enabled, it will not be added again, hence it is harmless
+#' to call this function multiple times.
+#'
+#' Note that changes to your options are not permanent. To automatically
+#' enable a repository for every R session, you can call this function in
+#' your [`~/.Rprofile`][Startup] script.
 #'
 #' @export
 #' @param universe vector with name(s) of the universe(s), i.e. the subdomain

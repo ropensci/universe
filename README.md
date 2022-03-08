@@ -15,7 +15,7 @@ Documentation is available on https://docs.ropensci.org/universe
  
 ## Enable a repository
 
-This is a basic example which shows you how to solve a common problem:
+Use `runiverse::add()` to opt-in to a package repository (this will modify your `options('repos')` list).
 
 ``` r
 # Install a package from r-universe
