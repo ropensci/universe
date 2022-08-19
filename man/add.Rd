@@ -2,9 +2,12 @@
 % Please edit documentation in R/addrepo.R
 \name{add}
 \alias{add}
+\alias{remove}
 \title{Enable a package repository from r-universe}
 \usage{
 add(universe = "ropensci")
+
+remove(universe)
 }
 \arguments{
 \item{universe}{vector with name(s) of the universe(s), i.e. the subdomain

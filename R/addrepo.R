@@ -10,6 +10,7 @@
 #' your [`~/.Rprofile`][Startup] script.
 #'
 #' @export
+#' @rdname add
 #' @param universe vector with name(s) of the universe(s), i.e. the subdomain
 #' part of `https://ropensci.r-universe.dev`.
 #' @returns the updated list of repositories
@@ -31,6 +32,15 @@ add <- function(universe = 'ropensci') {
       repos[name] <- url
     }
   }
+  options(repos = repos)
+  as.data.frame(repos)
+}
+
+#' @export
+#' @rdname add
+remove <- function(universe){
+  repos <- getOption("repos")
+  repos <- repos[names(repos) != universe]
   options(repos = repos)
   as.data.frame(repos)
 }
