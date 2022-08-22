@@ -15,4 +15,5 @@ RoxygenNote: 7.2.1
 Imports:
     curl,
     jsonlite,
-    tibble
+    tibble,
+    withr
