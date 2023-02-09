@@ -27,7 +27,7 @@ download_single_repo <- function(url, destdir, type = 'src'){
   out <- curl::multi_download(file.path(url, c("PACKAGES", "PACKAGES.gz")), progress = FALSE)
   if(out$status_code[1] != 200)
     stop("Failed to download PACKAGES file")
-  df <- as.data.frame(read.dcf('PACKAGES'))
+  df <- as.data.frame(read.dcf('PACKAGES'), stringsAsFactors = FALSE)
   if(nrow(df) == 0){
     warning("Repository is empty: ", url)
     return(df)
