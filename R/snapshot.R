@@ -24,18 +24,16 @@ download_single_repo <- function(url, destdir, type = 'src'){
   unlink(destdir, recursive = TRUE)
   dir.create(destdir, showWarnings = FALSE, recursive = TRUE)
   withr::local_dir(destdir)
-  for(x in c("PACKAGES", "PACKAGES.gz")){
-    download_file_verbose(file.path(url, x))
-  }
+  out <- curl::multi_download(file.path(url, c("PACKAGES", "PACKAGES.gz")), progress = FALSE)
+  if(out$status_code[1] != 200)
+    stop("Failed to download PACKAGES file")
   df <- as.data.frame(read.dcf('PACKAGES'))
   if(nrow(df) == 0){
     warning("Repository is empty: ", url)
     return(df)
   }
   df$fileurl <- paste0(url, '/', pkg_file(df$Package, df$Version, type))
-  for(file in df$fileurl){
-    download_file_verbose(file)
-  }
+  out2 <- curl::multi_download(df$fileurl)
   df$checksum <- tools::md5sum(basename(df$fileurl))
   stopifnot(all.equal(df$checksum, df$MD5sum))
   df
