@@ -13,7 +13,7 @@ r_version()
 \item{repo}{url of the cran-like repository to snapshot}
 
 \item{bin_versions}{vector with versions of R to download the win/mac binary
-packages. The default is to download binaries only for the current version.
+packages. The default is to download binaries only for your local version.
 Set to NULL to not download any binaries.}
 }
 \description{

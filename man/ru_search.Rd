@@ -7,7 +7,7 @@
 ru_search(q, universe = NULL, ...)
 }
 \arguments{
-\item{q}{string to search for. Wrap this in double quotes for exact matches.}
+\item{q}{string to search for. Wrap in double quotes to get exact matches.}
 
 \item{universe}{which universe to target. Default is all universes.}
 

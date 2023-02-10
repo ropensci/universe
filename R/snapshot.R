@@ -6,7 +6,7 @@
 #' @rdname snapshot
 #' @param repo url of the cran-like repository to snapshot
 #' @param bin_versions vector with versions of R to download the win/mac binary
-#' packages. The default is to download binaries only for the current version.
+#' packages. The default is to download binaries only for your local version.
 #' Set to NULL to not download any binaries.
 #' @examples repo_snapshot('https://jeroen.r-universe.dev', bin_versions = c("4.1", "4.2", "4.3"))
 repo_snapshot <- function(repo, destdir = 'snapshot', bin_versions = r_version()){
@@ -36,8 +36,12 @@ download_single_repo <- function(url, destdir, type = 'src'){
   pkgfiles <- paste0(url, '/', c("PACKAGES", "PACKAGES.gz", "PACKAGES.rds"))
   results <- curl::multi_download(c(pkgfiles, df$fileurl))
   unlink(results$destfile[results$status_code != 200])
-  df$checksum <- tools::md5sum(basename(df$fileurl))
-  stopifnot(all.equal(df$checksum, df$MD5sum))
+  if(length(df$MD5sum)){
+    checksum <- unname(tools::md5sum(basename(df$fileurl)))
+    stopifnot(all.equal(checksum, df$MD5sum))
+  } else {
+    message("Skipping MD5sum checks for this repo")
+  }
   df
 }
 
