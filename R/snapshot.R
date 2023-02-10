@@ -32,12 +32,18 @@ download_single_repo <- function(url, destdir, type = 'src'){
     warning("Repository is empty: ", url)
     return(df)
   }
+  writeLines(sprintf('Mirror from %s at %s', url, as.character(Sys.time())), 'timestamp.txt')
   df$fileurl <- paste0(url, '/', pkg_file(df$Package, df$Version, type))
   pkgfiles <- paste0(url, '/', c("PACKAGES", "PACKAGES.gz", "PACKAGES.rds"))
   results <- curl::multi_download(c(pkgfiles, df$fileurl))
   unlink(results$destfile[results$status_code != 200])
+  outfiles <- basename(df$fileurl)
+  failed <- outfiles[!file.exists(outfiles)]
+  if(any(failed)){
+    stop("Downloading failed for some files: ", paste(failed, collapse = ', '))
+  }
   if(length(df$MD5sum)){
-    checksum <- unname(tools::md5sum(basename(df$fileurl)))
+    checksum <- unname(tools::md5sum(outfiles))
     stopifnot(all.equal(checksum, df$MD5sum))
   } else {
     message("Skipping MD5sum checks for this repo")
