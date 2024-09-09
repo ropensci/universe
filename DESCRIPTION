@@ -2,7 +2,7 @@ Package: universe
 Type: Package
 Title: Tools for Working with R-universe <https://r-universe.dev>
 Version: 1.0.0
-Authors@R: person("Jeroen", "Ooms", role = c("aut", "cre"), email = "jeroen@berkeley.edu",
+Authors@R: person("Jeroen", "Ooms", role = c("aut", "cre"), email = "jeroenooms@gmail.com",
       comment = c(ORCID = "0000-0002-4035-0289"))
 Description: Utilities to interact with the R-universe platform. Includes
     functions to manage local package repositories, as well as API wrappers
