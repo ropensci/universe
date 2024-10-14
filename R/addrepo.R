@@ -17,11 +17,11 @@
 add <- function(universe = "ropensci") {
   repos <- getOption("repos")
   # r-universe packages depend on CRAN
-  cran <- repos["CRAN"]
+  cran <- repos[["CRAN"]]
   if (is.na(cran)) {
     repos <- c(repos, CRAN = "https://cloud.r-project.org")
   } else if (cran == "@CRAN@") {
-    repos["CRAN"] <- "https://cloud.r-project.org"
+    repos[["CRAN"]] <- "https://cloud.r-project.org"
   }
   for (x in universe) {
     name <- gsub("\\W", "", universe)
