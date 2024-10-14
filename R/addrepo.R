@@ -14,19 +14,19 @@
 #' @param universe vector with name(s) of the universe(s), i.e. the subdomain
 #' part of `https://ropensci.r-universe.dev`.
 #' @returns the updated list of repositories
-add <- function(universe = 'ropensci') {
+add <- function(universe = "ropensci") {
   repos <- getOption("repos")
   # r-universe packages depend on CRAN
-  cran <- repos['CRAN']
-  if(is.na(cran)){
-    repos <- c(repos, CRAN = 'https://cloud.r-project.org')
-  } else if(cran == '@CRAN@'){
-    repos['CRAN'] <- 'https://cloud.r-project.org'
+  cran <- repos["CRAN"]
+  if (is.na(cran)) {
+    repos <- c(repos, CRAN = "https://cloud.r-project.org")
+  } else if (cran == "@CRAN@") {
+    repos["CRAN"] <- "https://cloud.r-project.org"
   }
-  for (x in universe){
+  for (x in universe) {
     name <- gsub("\\W", "", universe)
     url <- structure(sprintf("https://%s.r-universe.dev/", universe), names = name)
-    if(is.na(repos[name])){
+    if (is.na(repos[name])) {
       repos <- c(url, repos) # prepend
     } else {
       repos[name] <- url
@@ -38,7 +38,7 @@ add <- function(universe = 'ropensci') {
 
 #' @export
 #' @rdname add
-remove <- function(universe){
+remove <- function(universe) {
   repos <- getOption("repos")
   repos <- repos[names(repos) != universe]
   options(repos = repos)
