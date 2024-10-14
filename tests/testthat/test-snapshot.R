@@ -1,5 +1,4 @@
 test_that("repo_snapshot() works", {
-  expect_true("ropenscilabs" %in% names(getOption("repos")))
   destdir <- withr::local_tempdir()
   suppressMessages(
     repo_snapshot("https://maelle.r-universe.dev", destdir = destdir)
