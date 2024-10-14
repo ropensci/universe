@@ -9,7 +9,7 @@
 #' packages. The default is to download binaries only for your local version.
 #' Set to NULL to not download any binaries.
 #' @param destdir where to save the snapshots (path).
-#' @examples
+#' @examplesIf interactive()
 #' repo_snapshot(
 #'   "https://jeroen.r-universe.dev",
 #'    bin_versions = c("4.1", "4.2", "4.3")
