@@ -25,7 +25,7 @@ add <- function(universe = "ropensci") {
   }
   for (x in universe) {
     name <- gsub("\\W", "", universe)
-    url <- structure(sprintf("https://%s.r-universe.dev/", universe), names = name)
+    url <- setNames(sprintf("https://%s.r-universe.dev/", universe), nm = name)
     if (is.na(repos[name])) {
       repos <- c(url, repos) # prepend
     } else {
