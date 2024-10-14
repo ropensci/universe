@@ -14,6 +14,9 @@
 #' @param universe vector with name(s) of the universe(s), i.e. the subdomain
 #' part of `https://ropensci.r-universe.dev`.
 #' @returns the updated list of repositories
+#' @examplesIf interactive()
+#' add("ropensci")
+#'
 add <- function(universe = "ropensci") {
   repos <- getOption("repos")
   # r-universe packages depend on CRAN
