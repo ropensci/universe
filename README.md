@@ -1,5 +1,9 @@
-# universe [![universe status badge](https://ropensci.r-universe.dev/badges/universe)](https://ropensci.r-universe.dev)
+# universe 
 
+<!-- badges: start -->
+[![universe status badge](https://ropensci.r-universe.dev/badges/universe)](https://ropensci.r-universe.dev)
+[![R-CMD-check](https://github.com/ropensci/universe/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ropensci/universe/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
 
 > Tools for Working with [R-universe](https://r-universe.dev)
 
