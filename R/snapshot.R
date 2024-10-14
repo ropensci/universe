@@ -40,7 +40,7 @@ download_single_repo <- function(url, destdir, type = "src") {
   df[["fileurl"]] <- paste0(url, "/", pkg_file(df[["Package"]], df[["Version"]], type)) # nolint: paste_linter
   pkgfiles <- paste0(url, "/", c("PACKAGES", "PACKAGES.gz", "PACKAGES.rds")) # nolint: paste_linter
   results <- curl::multi_download(c(pkgfiles, df[["fileurl"]]))
-  unlink(results[["destfile"]][results[["status_code"]] != 200])
+  unlink(results[["destfile"]][results[["status_code"]] != 200L])
   outfiles <- basename(df[["fileurl"]])
   failed <- outfiles[!file.exists(outfiles)]
   if (any(failed)) {
