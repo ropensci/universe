@@ -44,7 +44,7 @@ download_single_repo <- function(url, destdir, type = "src") {
   outfiles <- basename(df[["fileurl"]])
   failed <- outfiles[!file.exists(outfiles)]
   if (any(failed)) {
-    stop("Downloading failed for some files: ", paste(failed, collapse = ", "))
+    stop("Downloading failed for some files: ", toString(failed))
   }
   if (length(df[["MD5sum"]])) {
     checksum <- unname(tools::md5sum(outfiles))
