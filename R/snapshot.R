@@ -37,7 +37,7 @@ download_single_repo <- function(url, destdir, type = "src") {
     return(df)
   }
   writeLines(sprintf("Mirror from %s at %s", url, as.character(Sys.time())), "timestamp.txt") # nolint: line_length_linter
-  df$fileurl <- paste0(url, "/", pkg_file(df$Package, df$Version, type))
+  df[["fileurl"]] <- paste0(url, "/", pkg_file(df[["Package"]], df[["Version"]], type))
   pkgfiles <- paste0(url, "/", c("PACKAGES", "PACKAGES.gz", "PACKAGES.rds"))
   results <- curl::multi_download(c(pkgfiles, df$fileurl))
   unlink(results$destfile[results$status_code != 200])
