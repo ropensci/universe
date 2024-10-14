@@ -7,5 +7,6 @@
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
-^man/universe_query\.Rd$
 ^README\.Rmd$
+^codemeta\.json$
+^man/universe_query\.Rd$

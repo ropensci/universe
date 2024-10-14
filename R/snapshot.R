@@ -3,6 +3,7 @@
 #' Downloads a full copy (snapshot) of an R package repository.
 #'
 #' @export
+#' @return None, used for its side-effects.
 #' @rdname snapshot
 #' @param repo url of the cran-like repository to snapshot
 #' @param bin_versions vector with versions of R to download the win/mac binary

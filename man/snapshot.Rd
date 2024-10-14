@@ -18,6 +18,9 @@ r_version()
 packages. The default is to download binaries only for your local version.
 Set to NULL to not download any binaries.}
 }
+\value{
+None, used for its side-effects.
+}
 \description{
 Downloads a full copy (snapshot) of an R package repository.
 }

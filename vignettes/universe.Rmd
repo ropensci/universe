@@ -1,0 +1,83 @@
+---
+title: "universe"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{universe}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+> Tools for Working with [R-universe](https://r-universe.dev) and its APIs.
+
+## Installation and docs
+
+You can install the development version of universe from r-universe:
+
+``` r
+install.packages("universe", repos = "https://ropensci.r-universe.dev")
+```
+
+Or the development version of universe from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("pak")
+pak::pak("ropensci/universe")
+```
+
+Documentation is available on <https://docs.ropensci.org/universe>.
+ 
+## Enable a repository
+
+Use `runiverse::add()` to opt-in to a package repository (this will modify your `options('repos')` list).
+
+``` r
+# Install a package from r-universe
+universe::add("ropensci")
+install.packages("magick")
+```
+
+For more details see the documentation for [runiverse::add()](https://docs.ropensci.org/universe/reference/add.html).
+
+## Get data from the APIs
+
+### All packages in an universe
+
+```{r example}
+library(universe)
+universe_ls("jeroen")
+```
+
+### Info on all packages in an universe
+
+```{r}
+universe_all_packages("jeroen", limit = 1) |>
+  str(max.level = 2)
+```
+
+### Info on a single package in an universe
+
+```{r}
+universe_one_package("jeroen", package = "curl") |>
+  str(max.level = 1)
+```
+
+### Search within a single universe
+
+```{r}
+universe_search("ropensci", query = 'needs:httr2', limit = 1) |>
+  str(max.level = 2)
+```
+
+### Search among all universes
+
+```{r}
+global_search(query = '"weather data"', limit = 1) |>
+  str(max.level = 2)
+```

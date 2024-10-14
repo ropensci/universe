@@ -13,11 +13,17 @@ Useful links:
 \itemize{
   \item \url{https://docs.ropensci.org/universe/}
   \item \url{https://github.com/ropensci/universe}
+  \item Report bugs at \url{https://github.com/ropensci/universe/issues}
 }
 
 }
 \author{
 \strong{Maintainer}: Jeroen Ooms \email{jeroenooms@gmail.com} (\href{https://orcid.org/0000-0002-4035-0289}{ORCID})
+
+Authors:
+\itemize{
+  \item Maëlle Salmon \email{maelle.salmon@yahoo.se} (\href{https://orcid.org/0000-0002-2815-0399}{ORCID})
+}
 
 }
 \keyword{internal}
