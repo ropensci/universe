@@ -32,7 +32,7 @@ download_single_repo <- function(url, destdir, type = "src") {
   con <- curl::curl(file.path(url, "PACKAGES"))
   on.exit(close(con), add = TRUE)
   df <- as.data.frame(read.dcf(con), stringsAsFactors = FALSE)
-  if (nrow(df) == 0) {
+  if (nrow(df) == 0L) {
     warning("Repository is empty: ", url)
     return(df)
   }
