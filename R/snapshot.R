@@ -8,6 +8,7 @@
 #' @param bin_versions vector with versions of R to download the win/mac binary
 #' packages. The default is to download binaries only for your local version.
 #' Set to NULL to not download any binaries.
+#' @param destdir where to save the snapshots (path).
 #' @examples
 #' repo_snapshot(
 #'   "https://jeroen.r-universe.dev",

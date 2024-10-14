@@ -12,6 +12,8 @@ r_version()
 \arguments{
 \item{repo}{url of the cran-like repository to snapshot}
 
+\item{destdir}{where to save the snapshots (path).}
+
 \item{bin_versions}{vector with versions of R to download the win/mac binary
 packages. The default is to download binaries only for your local version.
 Set to NULL to not download any binaries.}
