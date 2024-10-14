@@ -21,7 +21,7 @@ perform_request <- function(universe, endpoint, params, verbose = FALSE) {
     sprintf("https://r-universe.dev/api/%s", endpoint)
   }
   if (length(params)) {
-    query <- paste(names(params), curl::curl_escape(params), sep = "=", collapse = "&")
+    query <- paste(names(params), curl::curl_escape(params), sep = "=", collapse = "&") # nolint: line_length_linter
     url <- paste0(url, "?", query)
   }
   df <- jsonlite::stream_in(con = curl::curl(url), verbose = verbose)
