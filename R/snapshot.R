@@ -67,11 +67,11 @@ pkg_file <- function(package, version, type) {
 
 contrib_path <- function(repo, type = "src", rver = getRversion()) {
   ver <- sub("(\\d+\\.\\d+).*", "\\1", rver)
-  stopifnot("Invalid R version" = grepl("^\\d+\\.\\d+$", ver))
+  stopifnot("Invalid R version" = grepl("^\\d+\\.\\d+$", ver)) # nolint: nonportable_path_linter
   switch(type,
-    src = sprintf("%s/src/contrib", repo),
-    win = sprintf("%s/bin/windows/contrib/%s", repo, ver),
-    mac = sprintf("%s/bin/macosx/contrib/%s", repo, ver),
+    src = sprintf("%s/src/contrib", repo), # nolint: nonportable_path_linter
+    win = sprintf("%s/bin/windows/contrib/%s", repo, ver), # nolint: nonportable_path_linter
+    mac = sprintf("%s/bin/macosx/contrib/%s", repo, ver), # nolint: nonportable_path_linter
     stop("Invalid type: ", type)
   )
 }
