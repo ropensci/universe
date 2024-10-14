@@ -23,6 +23,7 @@ Imports:
     rlang,
     withr
 Suggests: 
+    fs,
     httptest2,
     knitr,
     rmarkdown,
