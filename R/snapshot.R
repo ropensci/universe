@@ -8,7 +8,11 @@
 #' @param bin_versions vector with versions of R to download the win/mac binary
 #' packages. The default is to download binaries only for your local version.
 #' Set to NULL to not download any binaries.
-#' @examples repo_snapshot("https://jeroen.r-universe.dev", bin_versions = c("4.1", "4.2", "4.3"))
+#' @examples
+#' repo_snapshot(
+#'   "https://jeroen.r-universe.dev",
+#'    bin_versions = c("4.1", "4.2", "4.3")
+#' )
 repo_snapshot <- function(repo, destdir = "snapshot", bin_versions = r_version()) {
   unlink(destdir, recursive = TRUE)
   dir.create(destdir, showWarnings = FALSE, recursive = TRUE)

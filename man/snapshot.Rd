@@ -20,5 +20,8 @@ Set to NULL to not download any binaries.}
 Downloads a full copy (snapshot) of an R package repository.
 }
 \examples{
-repo_snapshot('https://jeroen.r-universe.dev', bin_versions = c("4.1", "4.2", "4.3"))
+repo_snapshot(
+  "https://jeroen.r-universe.dev",
+   bin_versions = c("4.1", "4.2", "4.3")
+)
 }
