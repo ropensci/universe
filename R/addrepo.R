@@ -32,7 +32,7 @@ add <- function(universe = "ropensci") {
       repos[name] <- url
     }
   }
-  options(repos = repos)
+  options(repos = repos) # nolint: undesirable_function_linter
   as.data.frame(repos)
 }
 
@@ -41,6 +41,6 @@ add <- function(universe = "ropensci") {
 remove <- function(universe) {
   repos <- getOption("repos")
   repos <- repos[names(repos) != universe]
-  options(repos = repos)
+  options(repos = repos) # nolint: undesirable_function_linter
   as.data.frame(repos)
 }
