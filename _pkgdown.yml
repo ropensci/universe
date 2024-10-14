@@ -1,0 +1,10 @@
+url: https://docs.ropensci.org/universe/
+template:
+  bootstrap: 5
+
+reference:
+- title: Utilities to handle local repositories
+  contents:
+  - add
+  - ru_search
+  - repo_snapshot

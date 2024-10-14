@@ -4,3 +4,6 @@
 ^packages.json$
 ^\.github$
 ^\.lintr$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
