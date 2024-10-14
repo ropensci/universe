@@ -13,13 +13,13 @@
 #'   "https://jeroen.r-universe.dev",
 #'    bin_versions = c("4.1", "4.2", "4.3")
 #' )
-repo_snapshot <- function(repo, destdir = "snapshot", bin_versions = r_version()) {
+repo_snapshot <- function(repo, destdir = "snapshot", bin_versions = r_version()) { # nolint: line_length_linter
   unlink(destdir, recursive = TRUE)
   dir.create(destdir, showWarnings = FALSE, recursive = TRUE)
-  download_single_repo(contrib_path(repo, "src"), contrib_path(destdir, "src"), "src")
+  download_single_repo(contrib_path(repo, "src"), contrib_path(destdir, "src"), "src") # nolint: line_length_linter
   for (rver in unique(major_version(as.character(bin_versions)))) {
-    download_single_repo(contrib_path(repo, "win", rver), contrib_path(destdir, "win", rver), "win")
-    download_single_repo(contrib_path(repo, "mac", rver), contrib_path(destdir, "mac", rver), "mac")
+    download_single_repo(contrib_path(repo, "win", rver), contrib_path(destdir, "win", rver), "win") # nolint: line_length_linter
+    download_single_repo(contrib_path(repo, "mac", rver), contrib_path(destdir, "mac", rver), "mac") # nolint: line_length_linter
   }
   list.files(destdir, recursive = TRUE)
 }
