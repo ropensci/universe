@@ -29,7 +29,7 @@ download_single_repo <- function(url, destdir, type = "src") {
   dir.create(destdir, showWarnings = FALSE, recursive = TRUE)
   withr::local_dir(destdir)
   message("Mirroring repo: ", url)
-  con <- curl::curl(file.path(url, c("PACKAGES")))
+  con <- curl::curl(file.path(url, "PACKAGES"))
   on.exit(close(con), add = TRUE)
   df <- as.data.frame(read.dcf(con), stringsAsFactors = FALSE)
   if (nrow(df) == 0) {
