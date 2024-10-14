@@ -1,0 +1,399 @@
+[
+    {
+        "Package": "cransays",
+        "Title": "Creates an Overview of CRAN Incoming Submissions",
+        "Version": "0.0.0.9000",
+        "Authors@R": "c(\nperson(\"Hugo\", \"Gruson\", , \"hugo.gruson+R@normalesup.org\", role = c(\"cre\", \"aut\"),\ncomment = c(ORCID = \"0000-0002-4094-1476\")),\nperson(\"Maëlle\", \"Salmon\", role = c(\"aut\", \"ccp\"),\ncomment = c(ORCID = \"0000-0002-2815-0399\")),\nperson(\"Locke Data\", role = \"fnd\",\ncomment = \"https://itsalocke.com\"),\nperson(\"Stephanie\", \"Locke\", , \"steph@itsalocke.com\", role = \"aut\",\ncomment = c(ORCID = \"0000-0002-2387-3723\")),\nperson(\"Mitchell\", \"O'Hara-Wild\", role = \"aut\",\ncomment = c(ORCID = \"0000-0001-6729-7695\")),\nperson(\"Lluís\", \"Revilla Sancho\", role = \"aut\",\ncomment = c(ORCID = \"0000-0001-9747-2570\")),\nperson(\"Jim\", \"Hester\", role = \"ctb\",\ncomment = c(ORCID = \"0000-0002-2739-7082\")),\nperson(\"Hadley\", \"Wickham\", role = \"ctb\",\ncomment = c(ORCID = \"0000-0003-4757-117X\"))\n)",
+        "Description": "It scrapes the CRAN incoming FTP folder to find where each\nsubmission is.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://github.com/r-hub/cransays,\nhttps://r-hub.github.io/cransays/",
+        "BugReports": "https://github.com/r-hub/cransays/issues",
+        "VignetteBuilder": "knitr",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.1.2",
+        "Repository": "https://maelle.r-universe.dev",
+        "RemoteUrl": "https://github.com/lockedata/cransays",
+        "RemoteRef": "HEAD",
+        "RemoteSha": "6fee0071e425a5cf1082ce5c91c8745045b64fc7",
+        "NeedsCompilation": "no",
+        "Packaged": {
+            "Date": "2024-09-26 05:16:30 UTC",
+            "User": "root"
+        },
+        "Author": "Hugo Gruson [cre, aut] (<https://orcid.org/0000-0002-4094-1476>),\nMaëlle Salmon [aut, ccp] (<https://orcid.org/0000-0002-2815-0399>),\nLocke Data [fnd] (https://itsalocke.com),\nStephanie Locke [aut] (<https://orcid.org/0000-0002-2387-3723>),\nMitchell O'Hara-Wild [aut] (<https://orcid.org/0000-0001-6729-7695>),\nLluís Revilla Sancho [aut] (<https://orcid.org/0000-0001-9747-2570>),\nJim Hester [ctb] (<https://orcid.org/0000-0002-2739-7082>),\nHadley Wickham [ctb] (<https://orcid.org/0000-0003-4757-117X>)",
+        "Maintainer": "Hugo Gruson <hugo.gruson+R@normalesup.org>",
+        "MD5sum": "c364b22c24fd3a1274225ca029d6826f",
+        "_user": "maelle",
+        "_type": "src",
+        "_file": "cransays_0.0.0.9000.tar.gz",
+        "_fileid": "c364b22c24fd3a1274225ca029d6826f",
+        "_filesize": 390388,
+        "_sha256": "b21e0b4f7c0f93564f951be6920693a6faea0587952de334ac3ada4ba4ef9b2d",
+        "_created": "2024-09-26T05:16:30.000Z",
+        "_published": "2024-09-26T05:22:02.150Z",
+        "_upstream": "https://github.com/lockedata/cransays",
+        "_commit": {
+            "id": "6fee0071e425a5cf1082ce5c91c8745045b64fc7",
+            "author": "Hugo Gruson <10783929+Bisaloo@users.noreply.github.com>",
+            "committer": "Hugo Gruson <10783929+Bisaloo@users.noreply.github.com>",
+            "message": "Add seconds to filename for historical archives\n\nTo avoid conflicts when two workflows happen to snapshot at the same minute.\n",
+            "time": 1724754984
+        },
+        "_maintainer": {
+            "name": "Hugo Gruson",
+            "email": "hugo.gruson+r@normalesup.org",
+            "login": "bisaloo",
+            "mastodon": "https://mastodon.social/@grusonh",
+            "uuid": 10783929,
+            "orcid": "0000-0002-4094-1476"
+        },
+        "_distro": "noble",
+        "_host": "GitHub-Actions",
+        "_status": "success",
+        "_pkgdocs": "skipped",
+        "_winbinary": "success",
+        "_macbinary": "success",
+        "_wasmbinary": "success",
+        "_linuxdevel": "success",
+        "_windevel": "success",
+        "_buildurl": "https://github.com/r-universe/maelle/actions/runs/11045976753",
+        "_registered": true,
+        "_dependencies": [
+            {
+                "package": "curl",
+                "role": "Imports"
+            },
+            {
+                "package": "dplyr",
+                "role": "Imports"
+            },
+            {
+                "package": "glue",
+                "role": "Imports"
+            },
+            {
+                "package": "lubridate",
+                "role": "Imports"
+            },
+            {
+                "package": "magrittr",
+                "role": "Imports"
+            },
+            {
+                "package": "prettyunits",
+                "role": "Imports"
+            },
+            {
+                "package": "ps",
+                "role": "Imports"
+            },
+            {
+                "package": "purrr",
+                "role": "Imports"
+            },
+            {
+                "package": "reactable",
+                "role": "Imports"
+            },
+            {
+                "package": "tibble",
+                "role": "Imports"
+            },
+            {
+                "package": "tidyr",
+                "role": "Imports"
+            },
+            {
+                "package": "utils",
+                "role": "Imports"
+            },
+            {
+                "package": "knitr",
+                "role": "Suggests"
+            },
+            {
+                "package": "pkgdown",
+                "role": "Suggests"
+            },
+            {
+                "package": "rmarkdown",
+                "role": "Suggests"
+            }
+        ],
+        "_owner": "lockedata",
+        "_selfowned": false,
+        "_usedby": 0,
+        "_updates": [
+            {
+                "week": "2023-49",
+                "n": 1
+            },
+            {
+                "week": "2023-50",
+                "n": 5
+            },
+            {
+                "week": "2024-05",
+                "n": 1
+            },
+            {
+                "week": "2024-09",
+                "n": 1
+            },
+            {
+                "week": "2024-13",
+                "n": 10
+            },
+            {
+                "week": "2024-18",
+                "n": 1
+            },
+            {
+                "week": "2024-19",
+                "n": 1
+            },
+            {
+                "week": "2024-35",
+                "n": 1
+            }
+        ],
+        "_tags": [
+
+        ],
+        "_stars": 77,
+        "_contributions": {
+            "maelle": 110,
+            "bisaloo": 59,
+            "mitchelloharawild": 7,
+            "jimhester": 3,
+            "stephlocke": 3,
+            "hadley": 2,
+            "llrs": 2,
+            "alexisderumigny": 1,
+            "bbolker": 1,
+            "gadenbuie": 1,
+            "jeroen": 1,
+            "olivroy": 1
+        },
+        "_userbio": {
+            "uuid": 8360597,
+            "type": "user",
+            "name": "Maëlle Salmon",
+            "description": "R(esearch) Software Engineer, Blogger"
+        },
+        "_downloads": {
+            "count": 0,
+            "source": "https://cranlogs.r-pkg.org/downloads/total/last-month/cransays"
+        },
+        "_devurl": "https://github.com/r-hub/cransays",
+        "_pkgdown": "https://r-hub.github.io/cransays",
+        "_searchresults": 0,
+        "_assets": [
+            "extra/citation.cff",
+            "extra/citation.html",
+            "extra/citation.json",
+            "extra/citation.txt",
+            "extra/contents.json",
+            "extra/cransays.html",
+            "extra/readme.html",
+            "extra/readme.md",
+            "manual.pdf"
+        ],
+        "_cranurl": false,
+        "_exports": [
+            "%>%",
+            "download_history",
+            "take_snapshot"
+        ],
+        "_help": [
+            {
+                "page": "download_history",
+                "title": "Downloads history",
+                "topics": [
+                    "download_history"
+                ]
+            },
+            {
+                "page": "take_snapshot",
+                "title": "Take Snapshot of CRAN incoming folder",
+                "topics": [
+                    "take_snapshot"
+                ]
+            }
+        ],
+        "_readme": "https://github.com/lockedata/cransays/raw/HEAD/README.md",
+        "_rundeps": [
+            "base64enc",
+            "bslib",
+            "cachem",
+            "cli",
+            "cpp11",
+            "curl",
+            "digest",
+            "dplyr",
+            "evaluate",
+            "fansi",
+            "fastmap",
+            "fontawesome",
+            "fs",
+            "generics",
+            "glue",
+            "highr",
+            "htmltools",
+            "htmlwidgets",
+            "jquerylib",
+            "jsonlite",
+            "knitr",
+            "lifecycle",
+            "lubridate",
+            "magrittr",
+            "memoise",
+            "mime",
+            "pillar",
+            "pkgconfig",
+            "prettyunits",
+            "ps",
+            "purrr",
+            "R6",
+            "rappdirs",
+            "reactable",
+            "reactR",
+            "rlang",
+            "rmarkdown",
+            "sass",
+            "stringi",
+            "stringr",
+            "tibble",
+            "tidyr",
+            "tidyselect",
+            "timechange",
+            "tinytex",
+            "utf8",
+            "vctrs",
+            "withr",
+            "xfun",
+            "yaml"
+        ],
+        "_vignettes": [
+            {
+                "source": "dashboard.Rmd",
+                "filename": "dashboard.html",
+                "title": "CRAN incoming dashboard",
+                "engine": "knitr::rmarkdown",
+                "headings": [
+                    "Dashboard",
+                    "CRAN review workflow"
+                ],
+                "created": "2018-10-09 07:48:47",
+                "modified": "2024-08-27 10:36:24",
+                "commits": 34
+            }
+        ],
+        "_score": 6.529943401658668,
+        "_indexed": false,
+        "_nocasepkg": "cransays",
+        "_universes": [
+            "maelle"
+        ],
+        "_binaries": [
+            {
+                "r": "4.5.0",
+                "os": "linux",
+                "version": "0.0.0.9000",
+                "date": "2024-09-26T05:18:46.000Z",
+                "distro": "noble",
+                "commit": "6fee0071e425a5cf1082ce5c91c8745045b64fc7",
+                "fileid": "8ab633f49c6a158aca344c814d1beece",
+                "status": "success",
+                "check": "NOTE",
+                "buildurl": "https://github.com/r-universe/maelle/actions/runs/11045976753"
+            },
+            {
+                "r": "4.4.1",
+                "os": "linux",
+                "version": "0.0.0.9000",
+                "date": "2024-09-26T05:16:30.000Z",
+                "distro": "noble",
+                "commit": "6fee0071e425a5cf1082ce5c91c8745045b64fc7",
+                "fileid": "a8953d8f099ff41faa39587479f38114",
+                "status": "success",
+                "buildurl": "https://github.com/r-universe/maelle/actions/runs/11045976753"
+            },
+            {
+                "r": "4.3.3",
+                "os": "mac",
+                "version": "0.0.0.9000",
+                "date": "2024-09-26T05:21:36.000Z",
+                "commit": "6fee0071e425a5cf1082ce5c91c8745045b64fc7",
+                "fileid": "aa45889efd86e136caf15a061bc8914b",
+                "status": "success",
+                "check": "NOTE",
+                "buildurl": "https://github.com/r-universe/maelle/actions/runs/11045976753"
+            },
+            {
+                "r": "4.4.1",
+                "os": "mac",
+                "version": "0.0.0.9000",
+                "date": "2024-09-26T05:21:39.000Z",
+                "commit": "6fee0071e425a5cf1082ce5c91c8745045b64fc7",
+                "fileid": "2d68c6fa1e61f28a4b0a3ac3b3583363",
+                "status": "success",
+                "check": "NOTE",
+                "buildurl": "https://github.com/r-universe/maelle/actions/runs/11045976753"
+            },
+            {
+                "r": "4.3.3",
+                "os": "wasm",
+                "version": "0.0.0.9000",
+                "date": "2024-09-26T05:18:46.000Z",
+                "commit": "6fee0071e425a5cf1082ce5c91c8745045b64fc7",
+                "fileid": "ff50acfd777af1b66a29a652124c59b7",
+                "status": "success",
+                "buildurl": "https://github.com/r-universe/maelle/actions/runs/11045976753"
+            },
+            {
+                "r": "4.4.1",
+                "os": "wasm",
+                "version": "0.0.0.9000",
+                "date": "2024-09-26T05:18:44.000Z",
+                "commit": "6fee0071e425a5cf1082ce5c91c8745045b64fc7",
+                "fileid": "3551c062b11828e777811bf5f91365ff",
+                "status": "success",
+                "buildurl": "https://github.com/r-universe/maelle/actions/runs/11045976753"
+            },
+            {
+                "r": "4.5.0",
+                "os": "win",
+                "version": "0.0.0.9000",
+                "date": "2024-09-26T05:18:21.000Z",
+                "commit": "6fee0071e425a5cf1082ce5c91c8745045b64fc7",
+                "fileid": "5d7d3b0ea015a6c4ab2d614cb01c7142",
+                "status": "success",
+                "check": "NOTE",
+                "buildurl": "https://github.com/r-universe/maelle/actions/runs/11045976753"
+            },
+            {
+                "r": "4.3.3",
+                "os": "win",
+                "version": "0.0.0.9000",
+                "date": "2024-09-26T05:18:20.000Z",
+                "commit": "6fee0071e425a5cf1082ce5c91c8745045b64fc7",
+                "fileid": "f6616f5d91c23e8b3d8bf645a8b91cc2",
+                "status": "success",
+                "check": "NOTE",
+                "buildurl": "https://github.com/r-universe/maelle/actions/runs/11045976753"
+            },
+            {
+                "r": "4.4.1",
+                "os": "win",
+                "version": "0.0.0.9000",
+                "date": "2024-09-26T05:18:24.000Z",
+                "commit": "6fee0071e425a5cf1082ce5c91c8745045b64fc7",
+                "fileid": "b4996840ede644187c5c3b6b23182d92",
+                "status": "success",
+                "check": "NOTE",
+                "buildurl": "https://github.com/r-universe/maelle/actions/runs/11045976753"
+            }
+        ]
+    }
+]

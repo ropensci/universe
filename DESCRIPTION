@@ -2,18 +2,28 @@ Package: universe
 Type: Package
 Title: Tools for Working with R-universe <https://r-universe.dev>
 Version: 1.0.0
-Authors@R: person("Jeroen", "Ooms", role = c("aut", "cre"), email = "jeroenooms@gmail.com",
-      comment = c(ORCID = "0000-0002-4035-0289"))
+Authors@R: c(
+    person("Jeroen", "Ooms", , "jeroenooms@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-4035-0289")),
+    person("Maëlle", "Salmon", , "maelle.salmon@yahoo.se", role = "aut",
+           comment = c(ORCID = "0000-0002-2815-0399"))
+  )
 Description: Utilities to interact with the R-universe platform. Includes
     functions to manage local package repositories, as well as API wrappers
     for retrieving data and metadata about packages in r-universe.
 License: Apache License (>= 2)
 URL: https://docs.ropensci.org/universe/, https://github.com/ropensci/universe
 Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
+Roxygen: list(markdown = TRUE, roclets = c("collate", "rd", "namespace", "devtag::dev_roclet"))
 RoxygenNote: 7.3.2
-Imports:
+Imports: 
+    cli,
     curl,
-    jsonlite,
-    tibble,
+    httr2,
+    rlang,
     withr
+Suggests: 
+    httptest2,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Config/Needs/build: moodymudskipper/devtag

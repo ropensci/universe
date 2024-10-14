@@ -3,8 +3,16 @@ template:
   bootstrap: 5
 
 reference:
+- title: Endpoint for global search across all universes
+  contents:
+  - global_search
+- title: Endpoints for single universes
+  contents:
+  - universe_ls
+  - universe_all_packages
+  - universe_one_package
+  - universe_search
 - title: Utilities to handle local repositories
   contents:
   - add
-  - ru_search
   - repo_snapshot

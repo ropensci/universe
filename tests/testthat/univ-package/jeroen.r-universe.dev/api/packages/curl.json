@@ -1,0 +1,790 @@
+{
+    "Package": "curl",
+    "Type": "Package",
+    "Title": "A Modern and Flexible Web Client for R",
+    "Version": "5.2.3",
+    "Authors@R": "c(\nperson(\"Jeroen\", \"Ooms\", role = c(\"aut\", \"cre\"), email = \"jeroenooms@gmail.com\",\ncomment = c(ORCID = \"0000-0002-4035-0289\")),\nperson(\"Hadley\", \"Wickham\", , \"hadley@rstudio.com\", role = \"ctb\"),\nperson(\"RStudio\", role = \"cph\")\n)",
+    "Description": "The curl() and curl_download() functions provide highly\nconfigurable drop-in replacements for base url() and\ndownload.file() with better performance, support for encryption\n(https, ftps), gzip compression, authentication, and other\n'libcurl' goodies. The core of the package implements a\nframework for performing fully customized requests where data\ncan be processed either in memory, on disk, or streaming via\nthe callback or connection interfaces. Some knowledge of\n'libcurl' is recommended; for a more-user-friendly web client\nsee the 'httr' package which builds on this package with http\nspecific tools and logic.",
+    "License": "MIT + file LICENSE",
+    "SystemRequirements": "libcurl: libcurl-devel (rpm) or\nlibcurl4-openssl-dev (deb).",
+    "URL": "https://jeroen.r-universe.dev/curl https://curl.se/libcurl/",
+    "BugReports": "https://github.com/jeroen/curl/issues",
+    "VignetteBuilder": "knitr",
+    "RoxygenNote": "7.3.0",
+    "Encoding": "UTF-8",
+    "Language": "en-US",
+    "Roxygen": "list(markdown = TRUE)",
+    "Repository": "https://jeroen.r-universe.dev",
+    "RemoteUrl": "https://github.com/jeroen/curl",
+    "RemoteRef": "HEAD",
+    "RemoteSha": "20d3bbe5eef7c4d7eb843598d7b59e3e56332859",
+    "NeedsCompilation": "yes",
+    "Packaged": {
+        "Date": "2024-09-19 16:33:20 UTC",
+        "User": "root"
+    },
+    "Author": "Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>),\nHadley Wickham [ctb],\nRStudio [cph]",
+    "Maintainer": "Jeroen Ooms <jeroenooms@gmail.com>",
+    "MD5sum": "d7023057e782cd88025f3828ffaf1503",
+    "_user": "jeroen",
+    "_type": "src",
+    "_file": "curl_5.2.3.tar.gz",
+    "_fileid": "d7023057e782cd88025f3828ffaf1503",
+    "_filesize": 307143,
+    "_created": "2024-09-19T16:33:20.000Z",
+    "_published": "2024-09-19T16:39:47.385Z",
+    "_upstream": "https://github.com/jeroen/curl",
+    "_commit": {
+        "id": "20d3bbe5eef7c4d7eb843598d7b59e3e56332859",
+        "author": "Jeroen Ooms <jeroenooms@gmail.com>",
+        "committer": "Jeroen Ooms <jeroenooms@gmail.com>",
+        "message": "Update NEWS\n",
+        "time": 1726760601
+    },
+    "_maintainer": {
+        "name": "Jeroen Ooms",
+        "email": "jeroenooms@gmail.com",
+        "login": "jeroen",
+        "mastodon": "https://fosstodon.org/@jeroenooms",
+        "uuid": 216319,
+        "orcid": "0000-0002-4035-0289"
+    },
+    "_distro": "noble",
+    "_host": "GitHub-Actions",
+    "_status": "success",
+    "_pkgdocs": "skipped",
+    "_winbinary": "success",
+    "_macbinary": "success",
+    "_wasmbinary": "none",
+    "_linuxdevel": "success",
+    "_windevel": "success",
+    "_buildurl": "https://github.com/r-universe/jeroen/actions/runs/10945093197",
+    "_registered": true,
+    "_dependencies": [
+        {
+            "package": "R",
+            "version": ">= 3.0.0",
+            "role": "Depends"
+        },
+        {
+            "package": "spelling",
+            "role": "Suggests"
+        },
+        {
+            "package": "testthat",
+            "version": ">= 1.0.0",
+            "role": "Suggests"
+        },
+        {
+            "package": "knitr",
+            "role": "Suggests"
+        },
+        {
+            "package": "jsonlite",
+            "role": "Suggests"
+        },
+        {
+            "package": "later",
+            "role": "Suggests"
+        },
+        {
+            "package": "rmarkdown",
+            "role": "Suggests"
+        },
+        {
+            "package": "httpuv",
+            "version": ">= 1.4.4",
+            "role": "Suggests"
+        },
+        {
+            "package": "webutils",
+            "role": "Suggests"
+        }
+    ],
+    "_owner": "jeroen",
+    "_selfowned": true,
+    "_usedby": 5530,
+    "_updates": [
+        {
+            "week": "2023-38",
+            "n": 1
+        },
+        {
+            "week": "2023-39",
+            "n": 6
+        },
+        {
+            "week": "2023-41",
+            "n": 1
+        },
+        {
+            "week": "2023-44",
+            "n": 1
+        },
+        {
+            "week": "2023-46",
+            "n": 1
+        },
+        {
+            "week": "2023-47",
+            "n": 2
+        },
+        {
+            "week": "2023-49",
+            "n": 4
+        },
+        {
+            "week": "2024-04",
+            "n": 3
+        },
+        {
+            "week": "2024-05",
+            "n": 4
+        },
+        {
+            "week": "2024-08",
+            "n": 2
+        },
+        {
+            "week": "2024-20",
+            "n": 1
+        },
+        {
+            "week": "2024-32",
+            "n": 1
+        },
+        {
+            "week": "2024-34",
+            "n": 3
+        },
+        {
+            "week": "2024-37",
+            "n": 2
+        },
+        {
+            "week": "2024-38",
+            "n": 1
+        }
+    ],
+    "_tags": [
+        {
+            "name": "v5.2.0",
+            "date": "2023-12-07"
+        },
+        {
+            "name": "5.2.1",
+            "date": "2024-02-20"
+        }
+    ],
+    "_stars": 216,
+    "_contributions": {
+        "jeroen": 1073,
+        "hadley": 32,
+        "gaborcsardi": 3,
+        "jennybc": 2,
+        "tlevine": 2,
+        "craigcitro": 1,
+        "jasperla": 1,
+        "jcheng5": 1,
+        "jbrzusto": 1,
+        "fazendaaa": 1,
+        "the-mad-statter": 1,
+        "mfansler": 1,
+        "mvkorpel": 1,
+        "pschmied": 1,
+        "rls-p4": 1,
+        "tanho63": 1,
+        "theprez": 1,
+        "wibeasley": 1,
+        "ahjota": 1,
+        "he32": 1
+    },
+    "_userbio": {
+        "uuid": 216319,
+        "type": "user",
+        "name": "Jeroen Ooms",
+        "description": "Staff research engineer for @ropensci"
+    },
+    "_downloads": {
+        "count": 1099777,
+        "source": "https://cranlogs.r-pkg.org/downloads/total/last-month/curl"
+    },
+    "_mentions": 21,
+    "_devurl": "https://github.com/jeroen/curl",
+    "_searchresults": 3328,
+    "_assets": [
+        "extra/citation.cff",
+        "extra/citation.html",
+        "extra/citation.json",
+        "extra/citation.txt",
+        "extra/contents.json",
+        "extra/curl.html",
+        "extra/NEWS.html",
+        "extra/NEWS.txt",
+        "extra/readme.html",
+        "extra/readme.md",
+        "manual.pdf"
+    ],
+    "_homeurl": "https://github.com/jeroen/curl",
+    "_realowner": "jeroen",
+    "_cranurl": true,
+    "_releases": [
+        {
+            "version": "0.2",
+            "date": "2014-11-20"
+        },
+        {
+            "version": "0.3",
+            "date": "2014-12-01"
+        },
+        {
+            "version": "0.4",
+            "date": "2015-01-08"
+        },
+        {
+            "version": "0.5",
+            "date": "2015-02-01"
+        },
+        {
+            "version": "0.6",
+            "date": "2015-05-19"
+        },
+        {
+            "version": "0.7",
+            "date": "2015-05-22"
+        },
+        {
+            "version": "0.8",
+            "date": "2015-06-06"
+        },
+        {
+            "version": "0.9",
+            "date": "2015-06-19"
+        },
+        {
+            "version": "0.9.1",
+            "date": "2015-07-04"
+        },
+        {
+            "version": "0.9.2",
+            "date": "2015-08-08"
+        },
+        {
+            "version": "0.9.3",
+            "date": "2015-08-25"
+        },
+        {
+            "version": "0.9.4",
+            "date": "2015-11-20"
+        },
+        {
+            "version": "0.9.5",
+            "date": "2016-01-23"
+        },
+        {
+            "version": "0.9.6",
+            "date": "2016-02-17"
+        },
+        {
+            "version": "0.9.7",
+            "date": "2016-04-10"
+        },
+        {
+            "version": "1.0",
+            "date": "2016-07-23"
+        },
+        {
+            "version": "1.1",
+            "date": "2016-07-26"
+        },
+        {
+            "version": "1.2",
+            "date": "2016-08-13"
+        },
+        {
+            "version": "2.0",
+            "date": "2016-09-16"
+        },
+        {
+            "version": "2.1",
+            "date": "2016-09-22"
+        },
+        {
+            "version": "2.2",
+            "date": "2016-10-21"
+        },
+        {
+            "version": "2.3",
+            "date": "2016-11-24"
+        },
+        {
+            "version": "2.4",
+            "date": "2017-03-24"
+        },
+        {
+            "version": "2.5",
+            "date": "2017-04-14"
+        },
+        {
+            "version": "2.6",
+            "date": "2017-04-27"
+        },
+        {
+            "version": "2.7",
+            "date": "2017-06-26"
+        },
+        {
+            "version": "2.8.1",
+            "date": "2017-07-21"
+        },
+        {
+            "version": "3.0",
+            "date": "2017-10-06"
+        },
+        {
+            "version": "3.1",
+            "date": "2017-12-12"
+        },
+        {
+            "version": "3.2",
+            "date": "2018-03-28"
+        },
+        {
+            "version": "3.3",
+            "date": "2019-01-10"
+        },
+        {
+            "version": "4.0",
+            "date": "2019-07-22"
+        },
+        {
+            "version": "4.1",
+            "date": "2019-09-16"
+        },
+        {
+            "version": "4.2",
+            "date": "2019-09-24"
+        },
+        {
+            "version": "4.3",
+            "date": "2019-12-02"
+        },
+        {
+            "version": "4.3.1",
+            "date": "2021-04-30"
+        },
+        {
+            "version": "4.3.2",
+            "date": "2021-06-23"
+        },
+        {
+            "version": "4.3.3",
+            "date": "2022-10-06"
+        },
+        {
+            "version": "5.0.0",
+            "date": "2023-01-14"
+        },
+        {
+            "version": "5.0.1",
+            "date": "2023-06-08"
+        },
+        {
+            "version": "5.0.2",
+            "date": "2023-08-14"
+        },
+        {
+            "version": "5.1.0",
+            "date": "2023-10-02"
+        },
+        {
+            "version": "5.2.0",
+            "date": "2023-12-08"
+        },
+        {
+            "version": "5.2.1",
+            "date": "2024-03-01"
+        },
+        {
+            "version": "5.2.2",
+            "date": "2024-08-26"
+        }
+    ],
+    "_exports": [
+        "curl",
+        "curl_download",
+        "curl_echo",
+        "curl_escape",
+        "curl_fetch_disk",
+        "curl_fetch_echo",
+        "curl_fetch_memory",
+        "curl_fetch_multi",
+        "curl_fetch_stream",
+        "curl_options",
+        "curl_symbols",
+        "curl_unescape",
+        "curl_upload",
+        "curl_version",
+        "file_writer",
+        "find_port",
+        "form_data",
+        "form_file",
+        "handle_cookies",
+        "handle_data",
+        "handle_reset",
+        "handle_setform",
+        "handle_setheaders",
+        "handle_setopt",
+        "has_internet",
+        "ie_get_proxy_for_url",
+        "ie_proxy_info",
+        "multi_add",
+        "multi_cancel",
+        "multi_download",
+        "multi_fdset",
+        "multi_list",
+        "multi_run",
+        "multi_set",
+        "new_handle",
+        "new_pool",
+        "nslookup",
+        "parse_date",
+        "parse_headers",
+        "parse_headers_list",
+        "send_mail"
+    ],
+    "_help": [
+        {
+            "page": "curl",
+            "title": "Curl connection interface",
+            "topics": [
+                "curl"
+            ]
+        },
+        {
+            "page": "curl_download",
+            "title": "Download file to disk",
+            "topics": [
+                "curl_download"
+            ]
+        },
+        {
+            "page": "curl_echo",
+            "title": "Echo Service",
+            "topics": [
+                "curl_echo",
+                "find_port"
+            ]
+        },
+        {
+            "page": "curl_escape",
+            "title": "URL encoding",
+            "topics": [
+                "curl_escape",
+                "curl_unescape"
+            ]
+        },
+        {
+            "page": "curl_fetch",
+            "title": "Fetch the contents of a URL",
+            "topics": [
+                "curl_fetch_disk",
+                "curl_fetch_echo",
+                "curl_fetch_memory",
+                "curl_fetch_multi",
+                "curl_fetch_stream"
+            ]
+        },
+        {
+            "page": "curl_options",
+            "title": "List curl version and options.",
+            "topics": [
+                "curl_options",
+                "curl_symbols",
+                "curl_version"
+            ]
+        },
+        {
+            "page": "curl_upload",
+            "title": "Upload a File",
+            "topics": [
+                "curl_upload"
+            ]
+        },
+        {
+            "page": "file_writer",
+            "title": "Lazy File Writer",
+            "topics": [
+                "file_writer"
+            ]
+        },
+        {
+            "page": "handle",
+            "title": "Create and configure a curl handle",
+            "topics": [
+                "handle",
+                "handle_data",
+                "handle_getcustom",
+                "handle_getheaders",
+                "handle_reset",
+                "handle_setform",
+                "handle_setheaders",
+                "handle_setopt",
+                "new_handle"
+            ]
+        },
+        {
+            "page": "handle_cookies",
+            "title": "Extract cookies from a handle",
+            "topics": [
+                "handle_cookies"
+            ]
+        },
+        {
+            "page": "ie_proxy",
+            "title": "Internet Explorer proxy settings",
+            "topics": [
+                "ie_get_proxy_for_url",
+                "ie_proxy",
+                "ie_proxy_info"
+            ]
+        },
+        {
+            "page": "multi",
+            "title": "Async Concurrent Requests",
+            "topics": [
+                "multi",
+                "multi_add",
+                "multi_cancel",
+                "multi_fdset",
+                "multi_list",
+                "multi_run",
+                "multi_set",
+                "new_pool"
+            ]
+        },
+        {
+            "page": "multi_download",
+            "title": "Advanced download interface",
+            "topics": [
+                "multi_download"
+            ]
+        },
+        {
+            "page": "multipart",
+            "title": "POST files or data",
+            "topics": [
+                "form_data",
+                "form_file",
+                "multipart"
+            ]
+        },
+        {
+            "page": "nslookup",
+            "title": "Lookup a hostname",
+            "topics": [
+                "has_internet",
+                "nslookup"
+            ]
+        },
+        {
+            "page": "parse_date",
+            "title": "Parse date/time",
+            "topics": [
+                "parse_date"
+            ]
+        },
+        {
+            "page": "parse_headers",
+            "title": "Parse response headers",
+            "topics": [
+                "parse_headers",
+                "parse_headers_list"
+            ]
+        },
+        {
+            "page": "send_mail",
+            "title": "Send email",
+            "topics": [
+                "send_mail"
+            ]
+        }
+    ],
+    "_readme": "https://github.com/jeroen/curl/raw/HEAD/README.md",
+    "_rundeps": [
+
+    ],
+    "_sysdeps": [
+        {
+            "package": "libcurl4t64",
+            "headers": "libcurl4-openssl-dev",
+            "source": "curl",
+            "version": "8.5.0-2ubuntu10.4",
+            "name": "curl",
+            "homepage": "https://curl.se/",
+            "description": "easy-to-use client-side URL transfer library (OpenSSL flavour)"
+        }
+    ],
+    "_vignettes": [
+        {
+            "source": "windows.Rmd",
+            "filename": "windows.html",
+            "title": "Proxies and Certificates on Windows Networks",
+            "engine": "knitr::rmarkdown",
+            "headings": [
+                "Multiple SSL Backends",
+                "Using a Proxy Server",
+                "Discovering Your Proxy Server"
+            ],
+            "created": "2019-08-28 13:27:44",
+            "modified": "2023-01-12 09:55:18",
+            "commits": 6
+        },
+        {
+            "source": "intro.Rmd",
+            "filename": "intro.html",
+            "title": "The curl package: a modern R interface to libcurl",
+            "engine": "knitr::rmarkdown",
+            "headings": [
+                "Request interfaces",
+                "Getting in memory",
+                "Downloading to disk",
+                "Streaming data",
+                "Non blocking connections",
+                "Async requests",
+                "Exception handling",
+                "Error automatically",
+                "Check manually",
+                "Customizing requests",
+                "Setting handle options",
+                "ENUM (long) options",
+                "Disabling HTTP/2",
+                "Performing the request",
+                "Reading cookies",
+                "On reusing handles",
+                "Posting forms",
+                "Using pipes"
+            ],
+            "created": "2015-02-28 22:25:46",
+            "modified": "2024-01-28 16:16:07",
+            "commits": 43
+        }
+    ],
+    "_score": 19.572632947699237,
+    "_indexed": true,
+    "_nocasepkg": "curl",
+    "_universes": [
+        "jeroen"
+    ],
+    "_binaries": [
+        {
+            "r": "4.5.0",
+            "os": "linux",
+            "version": "5.2.3",
+            "date": "2024-09-19T16:35:46.000Z",
+            "distro": "noble",
+            "arch": "x86_64",
+            "commit": "20d3bbe5eef7c4d7eb843598d7b59e3e56332859",
+            "fileid": "4ef24e97db60aec4536c764ed8fa8982",
+            "status": "success",
+            "check": "OK",
+            "buildurl": "https://github.com/r-universe/jeroen/actions/runs/10945093197"
+        },
+        {
+            "r": "4.4.1",
+            "os": "linux",
+            "version": "5.2.3",
+            "date": "2024-09-19T16:33:21.000Z",
+            "distro": "noble",
+            "arch": "x86_64",
+            "commit": "20d3bbe5eef7c4d7eb843598d7b59e3e56332859",
+            "fileid": "63b3b5be7f1fbb2d29ea481cea23d6a4",
+            "status": "success",
+            "buildurl": "https://github.com/r-universe/jeroen/actions/runs/10945093197"
+        },
+        {
+            "r": "4.3.3",
+            "os": "mac",
+            "version": "5.2.3",
+            "date": "2024-09-19T16:35:31.000Z",
+            "arch": "aarch64",
+            "commit": "20d3bbe5eef7c4d7eb843598d7b59e3e56332859",
+            "fileid": "c1cb48e15e125deb6b2917661c743742",
+            "status": "success",
+            "check": "NOTE",
+            "buildurl": "https://github.com/r-universe/jeroen/actions/runs/10945093197"
+        },
+        {
+            "r": "4.3.3",
+            "os": "mac",
+            "version": "5.2.3",
+            "date": "2024-09-19T16:36:56.000Z",
+            "arch": "x86_64",
+            "commit": "20d3bbe5eef7c4d7eb843598d7b59e3e56332859",
+            "fileid": "49be43fe6d2e15cb91e266459830c7b1",
+            "status": "success",
+            "check": "NOTE",
+            "buildurl": "https://github.com/r-universe/jeroen/actions/runs/10945093197"
+        },
+        {
+            "r": "4.4.1",
+            "os": "mac",
+            "version": "5.2.3",
+            "date": "2024-09-19T16:35:14.000Z",
+            "arch": "aarch64",
+            "commit": "20d3bbe5eef7c4d7eb843598d7b59e3e56332859",
+            "fileid": "496cae197d257a72e3af869ab63d02e5",
+            "status": "success",
+            "check": "NOTE",
+            "buildurl": "https://github.com/r-universe/jeroen/actions/runs/10945093197"
+        },
+        {
+            "r": "4.4.1",
+            "os": "mac",
+            "version": "5.2.3",
+            "date": "2024-09-19T16:36:05.000Z",
+            "arch": "x86_64",
+            "commit": "20d3bbe5eef7c4d7eb843598d7b59e3e56332859",
+            "fileid": "6b7dc1d747c78dc7c185196f6b2537a9",
+            "status": "success",
+            "check": "NOTE",
+            "buildurl": "https://github.com/r-universe/jeroen/actions/runs/10945093197"
+        },
+        {
+            "r": "4.5.0",
+            "os": "win",
+            "version": "5.2.3",
+            "date": "2024-09-19T16:35:43.000Z",
+            "arch": "x86_64",
+            "commit": "20d3bbe5eef7c4d7eb843598d7b59e3e56332859",
+            "fileid": "b7a45274a921a68c59b025fee259ed9d",
+            "status": "success",
+            "check": "NOTE",
+            "buildurl": "https://github.com/r-universe/jeroen/actions/runs/10945093197"
+        },
+        {
+            "r": "4.3.3",
+            "os": "win",
+            "version": "5.2.3",
+            "date": "2024-09-19T16:35:42.000Z",
+            "arch": "x86_64",
+            "commit": "20d3bbe5eef7c4d7eb843598d7b59e3e56332859",
+            "fileid": "b6932f241cc8f74f3dbcca41d7110dfe",
+            "status": "success",
+            "check": "NOTE",
+            "buildurl": "https://github.com/r-universe/jeroen/actions/runs/10945093197"
+        },
+        {
+            "r": "4.4.1",
+            "os": "win",
+            "version": "5.2.3",
+            "date": "2024-09-19T16:35:45.000Z",
+            "arch": "x86_64",
+            "commit": "20d3bbe5eef7c4d7eb843598d7b59e3e56332859",
+            "fileid": "67c1d634d87e06abbb010071a1702145",
+            "status": "success",
+            "check": "NOTE",
+            "buildurl": "https://github.com/r-universe/jeroen/actions/runs/10945093197"
+        }
+    ]
+}
