@@ -4,7 +4,7 @@
 \alias{universe_search}
 \title{Search within a single universe}
 \usage{
-universe_search(universe, query, limit)
+universe_search(universe, query, limit = 100L)
 }
 \arguments{
 \item{universe}{Name of the universe (character of length 1)}

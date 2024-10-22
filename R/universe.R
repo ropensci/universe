@@ -85,7 +85,7 @@ universe_one_package <- function(universe, package) {
 #' universe_search("ropensci", query = '"weather data"')
 #' universe_search("ropensci", query = 'needs:httr2')
 #' @family universe
-universe_search <- function(universe, query, limit) {
+universe_search <- function(universe, query, limit = 100L) {
   assert_character(universe, "universe")
   assert_character(query, "query")
   # TODO assert that universe is an universe
