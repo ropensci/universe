@@ -16,6 +16,8 @@ License: Apache License (>= 2)
 URL: https://docs.ropensci.org/universe/,
     https://github.com/ropensci/universe
 BugReports: https://github.com/ropensci/universe/issues
+Depends:
+    R (>= 4.1.0)
 Imports: 
     cli,
     curl,
@@ -28,10 +30,11 @@ Suggests:
     knitr,
     rmarkdown,
     testthat (>= 3.0.0)
+VignetteBuilder: 
+    knitr
 Config/Needs/build: moodymudskipper/devtag
 Config/testthat/edition: 3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE, roclets = c("collate", "rd", "namespace",
     "devtag::dev_roclet"))
 RoxygenNote: 7.3.2
-VignetteBuilder: knitr
