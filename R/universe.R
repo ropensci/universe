@@ -108,7 +108,7 @@ universe_search <- function(universe, query, limit = 100L) {
 #'
 #' @examplesIf interactive()
 #' head(all_universes())
-all_universes <- function(type = c("all", "universe", "maintainer")) {
+all_universes <- function(type = c("all", "universes", "maintainers")) {
   type <- type %||% "all"
   type <- rlang::arg_match(type)
 

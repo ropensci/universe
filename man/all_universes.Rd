@@ -4,7 +4,7 @@
 \alias{all_universes}
 \title{All universes}
 \usage{
-all_universes(type = c("all", "universe", "maintainer"))
+all_universes(type = c("all", "universes", "maintainers"))
 }
 \arguments{
 \item{type}{Type of universe to query: "all",

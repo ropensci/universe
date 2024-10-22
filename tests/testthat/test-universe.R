@@ -46,4 +46,6 @@ test_that("all_universes() works", {
   skip_if_offline()
   expect_error(all_universes("bla"), "must be")
   expect_type(all_universes(), "character")
+  expect_type(all_universes(type = "universes"), "character")
+  expect_type(all_universes(type = "maintainers"), "character")
 })
