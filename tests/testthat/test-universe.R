@@ -28,10 +28,22 @@ test_that("universe_one_package() errors well", {
   })
 })
 
+test_that("assert_universe() works", {
+  expect_snapshot(error = TRUE, {
+    universe_all_packages("thisisnotanuniversenameok")
+  })
+})
+
 test_that("universe_search() works", {
   httptest2::with_mock_dir("univ-search", {
     packages <- universe_search("ropensci", query = "needs:gert", limit = 1L)
   })
   expect_type(packages, "list")
   expect_gt(length(packages), 0L)
+})
+
+test_that("all_universes() works", {
+  skip_if_offline()
+  expect_error(all_universes("bla"), "must be")
+  expect_type(all_universes(), "character")
 })

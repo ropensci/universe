@@ -8,6 +8,7 @@ reference:
   - global_search
 - title: Endpoints for single universes
   contents:
+  - all_universes
   - universe_ls
   - universe_all_packages
   - universe_one_package

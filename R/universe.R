@@ -11,7 +11,7 @@
 #' @family universe
 universe_ls <- function(universe) {
   assert_character(universe, "universe")
-  # TODO assert that universe is an universe
+  assert_universe(universe)
 
   universe_query(
     universe_url = sprintf("https://%s.r-universe.dev", universe),
@@ -34,7 +34,7 @@ universe_ls <- function(universe) {
 #' @family universe
 universe_all_packages <- function(universe, limit = 100L) {
   assert_character(universe, "universe")
-  # TODO assert that universe is an universe
+  assert_universe(universe)
 
   universe_query(
     universe_url = sprintf("https://%s.r-universe.dev", universe),
@@ -57,8 +57,8 @@ universe_all_packages <- function(universe, limit = 100L) {
 #' @family universe
 universe_one_package <- function(universe, package) {
   assert_character(universe, "universe")
+  assert_universe(universe)
   assert_character(package, "package")
-  # TODO assert that universe is an universe
 
   if (!package %in% universe_ls(universe)) {
     cli::cli_abort("Can't find package {package} in universe {universe}.")
@@ -87,12 +87,68 @@ universe_one_package <- function(universe, package) {
 #' @family universe
 universe_search <- function(universe, query, limit = 100L) {
   assert_character(universe, "universe")
+  assert_universe(universe)
   assert_character(query, "query")
-  # TODO assert that universe is an universe
 
   universe_query(
     universe_url = sprintf("https://%s.r-universe.dev", universe),
     path = "search",
     query_params = list(q = query, limit = limit)
   )
+}
+
+#' All universes
+#'
+#' @param type Type of universe to query: "all",
+#' only organizations ("universe"),
+#' personal accounts ("maintainer").
+#'
+#' @return A character vector of all universes.
+#' @export
+#'
+#' @examplesIf interactive()
+#' head(all_universes())
+all_universes <- function(type = c("all", "universe", "maintainer")) {
+  type <- type %||% "all"
+  type <- rlang::arg_match(type)
+
+  req_cache_path <- file.path(tools::R_user_dir("universe", "cache"), "httr2")
+
+  everyone <- httr2::request("https://r-universe.dev/stats/everyone") |>
+    httr2::req_cache(req_cache_path) |>
+    httr2::req_perform() |>
+    httr2::resp_body_json()
+
+  if (type == "all") {
+    c(
+      unlist(everyone[["maintainers"]]),
+      unlist(everyone[["universes"]])
+    )
+  } else {
+    unlist(everyone[[type]])
+  }
+
+}
+
+# https://github.com/ropensci/universe/issues/3
+assert_universe <- function(universe, call = rlang::caller_env()) {
+
+  universe_url <- sprintf("https://%s.r-universe.dev", universe)
+  universe_status <- httr2::request(universe_url) |>
+    httr2::req_error(is_error = \(resp) FALSE) |>
+    httr2::req_perform() |>
+    httr2::resp_status()
+
+
+  if (universe_status == 404L) {
+    cli::cli_abort(
+      c(
+        "Can't find {.arg universe} {.val {universe}} in existing universes.",
+        i = "Maybe you made a typo?"
+      ),
+      call = call
+    )
+  }
+
+  invisible(TRUE)
 }

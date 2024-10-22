@@ -1,14 +1,14 @@
 {
     "results": [
         {
-            "_id": "66e9d5de363ce6fc662c9fbd",
+            "_id": "6710ad58035af9e859011d5c",
             "Package": "DataPackageR",
             "Title": "Construct Reproducible Analytic Data Sets as R Packages",
             "Description": "A framework to help construct R data packages in a\nreproducible manner. Potentially time consuming processing of\nraw data sets into analysis ready data sets is done in a\nreproducible manner and decoupled from the usual 'R CMD build'\nprocess so that data sets can be processed into R objects in\nthe data package and the data package can then be shared,\nbuilt, and installed by others without the need to repeat\ncomputationally costly data processing.  The package maintains\ndata provenance by turning the data processing scripts into\npackage vignettes, as well as enforcing documentation and\nversion checking of included data objects. Data packages can be\nversion controlled on 'GitHub', and used to share data for\nmanuscripts, collaboration and reproducible research.",
             "_user": "ropensci",
             "_owner": "ropensci",
             "_usedby": 0,
-            "_score": 9.432959034352248,
+            "_score": 9.36082356272465,
             "_uuid": 1200269,
             "maintainer": {
                 "name": "Dave Slager",
@@ -18,7 +18,7 @@
                 "orcid": "0000-0003-2525-2039"
             },
             "updated": 1726594119,
-            "stars": 153,
+            "stars": 154,
             "topics": [
                 "peer-reviewed",
                 "reproducibility"
@@ -89,7 +89,7 @@
                 "yaml",
                 "zip"
             ],
-            "rank": 9.432959034352248
+            "rank": 9.36082356272465
         }
     ],
     "query": {
