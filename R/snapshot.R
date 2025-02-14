@@ -16,64 +16,35 @@
 #'    bin_versions = c("4.1", "4.2", "4.3")
 #' )
 repo_snapshot <- function(repo, destdir = "snapshot", bin_versions = r_version()) { # nolint: line_length_linter
-  unlink(destdir, recursive = TRUE)
+  not_empty <- length(fs::dir_ls(destdir)) > 0
+  if (not_empty) {
+    cli::cli_abort("{.arg destdir} must be empty.")
+  }
   dir.create(destdir, showWarnings = FALSE, recursive = TRUE)
-  download_single_repo(contrib_path(repo, "src"), contrib_path(destdir, "src"), "src") # nolint: line_length_linter
+  download_single_repo(contrib_path(repo, "src"), destdir)
   for (rver in unique(major_version(as.character(bin_versions)))) {
-    download_single_repo(contrib_path(repo, "win", rver), contrib_path(destdir, "win", rver), "win") # nolint: line_length_linter
-    download_single_repo(contrib_path(repo, "mac", rver), contrib_path(destdir, "mac", rver), "mac") # nolint: line_length_linter
+    download_single_repo(contrib_path(repo, "win", rver), destdir)
+    download_single_repo(contrib_path(repo, "mac", rver), destdir)
+    download_single_repo(contrib_path(repo, "linux", rver), destdir)
   }
-  list.files(destdir, recursive = TRUE)
+  if (rlang::is_interactive()) fs::dir_tree(destdir)
 }
 
-download_single_repo <- function(url, destdir, type = "src") {
-  unlink(destdir, recursive = TRUE)
-  dir.create(destdir, showWarnings = FALSE, recursive = TRUE)
-  withr::local_dir(destdir)
-  message("Mirroring repo: ", url)
-  con <- curl::curl(file.path(url, "PACKAGES"))
-  on.exit(close(con), add = TRUE)
-  df <- as.data.frame(read.dcf(con), stringsAsFactors = FALSE)
-  if (nrow(df) == 0L) {
-    warning("Repository is empty: ", url)
-    return(df)
-  }
-  writeLines(sprintf("Mirror from %s at %s", url, as.character(Sys.time())), "timestamp.txt") # nolint: line_length_linter
-  df[["fileurl"]] <- paste0(url, "/", pkg_file(df[["Package"]], df[["Version"]], type)) # nolint: paste_linter
-  pkgfiles <- paste0(url, "/", c("PACKAGES", "PACKAGES.gz", "PACKAGES.rds")) # nolint: paste_linter
-  results <- curl::multi_download(c(pkgfiles, df[["fileurl"]]))
-  unlink(results[["destfile"]][results[["status_code"]] != 200L])
-  outfiles <- basename(df[["fileurl"]])
-  failed <- outfiles[!file.exists(outfiles)]
-  if (any(failed)) {
-    stop("Downloading failed for some files: ", toString(failed))
-  }
-  if (length(df[["MD5sum"]])) {
-    checksum <- unname(tools::md5sum(outfiles))
-    stopifnot(all.equal(checksum, df[["MD5sum"]]))
-  } else {
-    message("Skipping MD5sum checks for this repo")
-  }
-  df
-}
-
-pkg_file <- function(package, version, type) {
-  ext <- switch(type,
-    src = "tar.gz",
-    win = "zip",
-    mac = "tgz",
-    stop("Invalid pkg type")
-  )
-  sprintf("%s_%s.%s", package, version, ext)
+download_single_repo <- function(url, destdir) {
+  local_dir <- withr::local_tempdir()
+  local_zip <- file.path(local_dir, "snapshot.zip")
+  curl::curl_download(url, local_zip)
+  utils::unzip(local_zip, exdir = destdir)
 }
 
 contrib_path <- function(repo, type = "src", rver = getRversion()) {
   ver <- sub("(\\d+\\.\\d+).*", "\\1", rver)
   stopifnot("Invalid R version" = grepl("^\\d+\\.\\d+$", ver)) # nolint: nonportable_path_linter
   switch(type,
-    src = sprintf("%s/src/contrib", repo), # nolint: nonportable_path_linter
-    win = sprintf("%s/bin/windows/contrib/%s", repo, ver), # nolint: nonportable_path_linter
-    mac = sprintf("%s/bin/macosx/contrib/%s", repo, ver), # nolint: nonportable_path_linter
+    src = sprintf("%s/api/snapshot/zip?types=src", repo), # nolint: nonportable_path_linter
+    win = sprintf("%s/api/snapshot/zip?types=win&binaries=%s", repo, ver),
+    mac = sprintf("%s/api/snapshot/zip?types=mac&binaries=%s", repo, ver),
+    linux = sprintf("%s/api/snapshot/zip?types=linux&binaries=%s", repo, ver),
     stop("Invalid type: ", type)
   )
 }
