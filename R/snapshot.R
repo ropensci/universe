@@ -6,7 +6,7 @@
 #' @return None, used for its side-effects.
 #' @rdname snapshot
 #' @param repo url of the cran-like repository to snapshot
-#' @param type type of snapshot. Either `NULL` or one of "src", "win", "mac", "linux", "wasm", "docs".
+#' @param types type of snapshot. Either `NULL` or one of "src", "win", "mac", "linux", "wasm", "docs".
 #' By default, if `NULL`, "win", "mac", "linux" snapshots will be downloaded.
 #' @param bin_versions vector with versions of R to download binary
 #' packages. The default is to download binaries for all available versions.

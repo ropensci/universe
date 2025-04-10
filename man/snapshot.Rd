@@ -17,14 +17,14 @@ r_version()
 \arguments{
 \item{repo}{url of the cran-like repository to snapshot}
 
+\item{types}{type of snapshot. Either \code{NULL} or one of "src", "win", "mac", "linux", "wasm", "docs".
+By default, if \code{NULL}, "win", "mac", "linux" snapshots will be downloaded.}
+
 \item{destdir}{where to save the snapshots (path).}
 
 \item{bin_versions}{vector with versions of R to download binary
 packages. The default is to download binaries for all available versions.
 Set to NULL to not download any binaries.}
-
-\item{type}{type of snapshot. Either \code{NULL} or one of "src", "win", "mac", "linux", "wasm", "docs".
-By default, if \code{NULL}, "win", "mac", "linux" snapshots will be downloaded.}
 }
 \value{
 None, used for its side-effects.
