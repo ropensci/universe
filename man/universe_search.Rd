@@ -22,7 +22,7 @@ total number of results and can be used as \code{limit} value in a second call.
 Search within a single universe
 }
 \examples{
-\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 universe_search("ropensci", query = '"weather data"')
 universe_search("ropensci", query = 'needs:httr2')
 \dontshow{\}) # examplesIf}

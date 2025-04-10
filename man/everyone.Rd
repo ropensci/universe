@@ -18,7 +18,7 @@ A character vector of all universes.
 All universes
 }
 \examples{
-\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 head(everyone())
 \dontshow{\}) # examplesIf}
 }
