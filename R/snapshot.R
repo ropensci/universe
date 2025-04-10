@@ -15,7 +15,12 @@
 #'   "https://jeroen.r-universe.dev",
 #'    bin_versions = c("4.1", "4.2", "4.3")
 #' )
-repo_snapshot <- function(repo, destdir = "snapshot", bin_versions = r_version()) { # nolint: line_length_linter
+repo_snapshot <- function(
+  repo,
+  destdir = "snapshot",
+  bin_versions = r_version()
+) {
+  # nolint: line_length_linter
   not_empty <- length(fs::dir_ls(destdir)) > 0
   if (not_empty) {
     cli::cli_abort("{.arg destdir} must be empty.")
@@ -40,7 +45,8 @@ download_single_repo <- function(url, destdir) {
 contrib_path <- function(repo, type = "src", rver = getRversion()) {
   ver <- sub("(\\d+\\.\\d+).*", "\\1", rver)
   stopifnot("Invalid R version" = grepl("^\\d+\\.\\d+$", ver)) # nolint: nonportable_path_linter
-  switch(type,
+  switch(
+    type,
     src = sprintf("%s/api/snapshot/zip?types=src", repo), # nolint: nonportable_path_linter
     win = sprintf("%s/api/snapshot/zip?types=win&binaries=%s", repo, ver),
     mac = sprintf("%s/api/snapshot/zip?types=mac&binaries=%s", repo, ver),
