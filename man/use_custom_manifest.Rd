@@ -7,7 +7,9 @@
 use_custom_manifest(universe, path = "packages.json")
 }
 \arguments{
-\item{universe}{}
+\item{universe}{Name of the universe, e.g. "jeroen"}
+
+\item{path}{Absolute path to which the JSON file could be saved.}
 }
 \value{
 The path to the JSON file it created.

@@ -1,6 +1,7 @@
 #' Create `packages.json` for existing universe
 #'
-#' @param universe
+#' @param universe Name of the universe, e.g. "jeroen"
+#' @param path Absolute path to which the JSON file could be saved.
 #'
 #' @returns The path to the JSON file it created.
 #'
