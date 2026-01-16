@@ -18,7 +18,7 @@ A list with information on the package.
 Info on a single packages in an universe
 }
 \examples{
-\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 universe_one_package("jeroen", package = "curl")
 \dontshow{\}) # examplesIf}
 }

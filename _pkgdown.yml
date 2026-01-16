@@ -13,6 +13,9 @@ reference:
   - universe_all_packages
   - universe_one_package
   - universe_search
+- title: Utilities to manage universes
+  contents:
+  - use_universe_action
 - title: Utilities to handle local repositories
   contents:
   - add
