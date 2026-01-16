@@ -18,7 +18,7 @@ A list with information on all packages in the universe.
 Info on all packages in an universe
 }
 \examples{
-\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 universe_all_packages("jeroen")
 universe_all_packages("ropensci")
 \dontshow{\}) # examplesIf}

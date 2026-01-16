@@ -25,7 +25,7 @@ None, used for its side-effects.
 Downloads a full copy (snapshot) of an R package repository.
 }
 \examples{
-\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 repo_snapshot(
   "https://jeroen.r-universe.dev",
    bin_versions = c("4.1", "4.2", "4.3")

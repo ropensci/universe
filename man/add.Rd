@@ -28,7 +28,7 @@ enable a repository for every R session, you can call this function in
 your \code{\link[=Startup]{~/.Rprofile}} script.
 }
 \examples{
-\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 add("ropensci")
 \dontshow{\}) # examplesIf}
 }

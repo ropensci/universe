@@ -13,6 +13,9 @@ reference:
   - universe_all_packages
   - universe_one_package
   - universe_search
+- title: Utilities to handle universes
+  contents:
+  - use_custom_manifest
 - title: Utilities to handle local repositories
   contents:
   - add

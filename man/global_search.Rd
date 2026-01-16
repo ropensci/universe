@@ -20,7 +20,7 @@ total number of results and can be used as \code{limit} value in a second call.
 Search among all universes
 }
 \examples{
-\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 global_search(query = '"weather data"', limit = 1)
 global_search(query = 'needs:httr2', limit = 1)
 \dontshow{\}) # examplesIf}
