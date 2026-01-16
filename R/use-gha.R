@@ -39,7 +39,9 @@ use_universe_action <- function(universe = NULL, path = ".") {
 
   # if you use this function you probably are a usethis user?
   rlang::check_installed("usethis")
-  usethis::use_build_ignore(workflow_path)
+  usethis::with_project(path, quiet = TRUE, force = TRUE, {
+    usethis::use_build_ignore(workflow_path)
+  })
   cli::cli_alert_success("Created {.path {workflow_path}}!")
   invisible(workflow_path)
 }
