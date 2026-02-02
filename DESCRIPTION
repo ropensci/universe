@@ -29,7 +29,8 @@ Suggests:
     httptest2,
     knitr,
     rmarkdown,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    usethis
 VignetteBuilder: 
     knitr
 Config/Needs/build: moodymudskipper/devtag
