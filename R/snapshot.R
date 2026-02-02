@@ -20,7 +20,7 @@ repo_snapshot <- function(
   bin_versions = r_version(),
   verbose = interactive()
 ) {
-  types <- match.arg(types, several.ok = TRUE)
+  types <- rlang::arg_match(types, multiple = TRUE)
 
   destdir <- destdir %||% sub(".*//", "", repo)
 
