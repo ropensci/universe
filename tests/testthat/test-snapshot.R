@@ -1,8 +1,6 @@
 test_that("repo_snapshot() works", {
   destdir <- withr::local_tempdir()
-  suppressMessages(
-    repo_snapshot("https://maelle.r-universe.dev", destdir = destdir)
-  )
+  repo_snapshot("https://maelle.r-universe.dev", destdir = destdir, bin_versions = NULL)
   expect_true(fs::dir_exists(fs::path(
     destdir,
     "bin",
