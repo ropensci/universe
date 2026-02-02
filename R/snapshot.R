@@ -41,8 +41,10 @@ repo_snapshot <- function(
     # req_progress() does not work if server has no content-length??
     req <- httr2::req_options(req, noprogress = FALSE)
   }
-  local_zip <- file.path(tempdir(), "snapshot.zip")
-  on.exit(unlink(local_zip))
+
+  local_tempdir <- withr::local_tempdir()
+  local_zip <- file.path(local_tempdir, "snapshot.zip")
+
   httr2::req_perform(req, path = local_zip)
   if (verbose) {
     cli::cli_alert_info("Extracing zip file...")
