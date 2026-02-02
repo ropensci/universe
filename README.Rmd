@@ -52,6 +52,7 @@ install.packages("magick")
 
 For more details see the documentation for [runiverse::add()](https://docs.ropensci.org/universe/reference/add.html).
 
+
 ## Get data from the APIs
 
 ### All packages in an universe

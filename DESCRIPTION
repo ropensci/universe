@@ -1,7 +1,7 @@
 Type: Package
 Package: universe
 Title: Tools for Working with R-universe <https://r-universe.dev>
-Version: 1.0.0
+Version: 1.0.0.9000
 Authors@R: c(
     person("Jeroen", "Ooms", , "jeroenooms@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-4035-0289")),
@@ -23,6 +23,7 @@ Imports:
     curl,
     fs,
     httr2,
+    jsonlite,
     rlang,
     withr
 Suggests: 

@@ -16,6 +16,7 @@ reference:
 - title: Utilities to manage universes
   contents:
   - use_universe_action
+  - use_custom_manifest
 - title: Utilities to handle local repositories
   contents:
   - add
