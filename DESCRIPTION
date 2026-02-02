@@ -21,11 +21,11 @@ Depends:
 Imports: 
     cli,
     curl,
+    fs,
     httr2,
     rlang,
     withr
 Suggests: 
-    fs,
     httptest2,
     knitr,
     rmarkdown,
@@ -37,4 +37,4 @@ Config/testthat/edition: 3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE, roclets = c("collate", "rd", "namespace",
     "devtag::dev_roclet"))
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.2.9000

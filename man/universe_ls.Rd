@@ -16,7 +16,7 @@ A character vector of all packages in the universe.
 All packages in an universe
 }
 \examples{
-\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 universe_ls("jeroen")
 universe_ls("ropensci")
 \dontshow{\}) # examplesIf}
