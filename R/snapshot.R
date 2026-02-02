@@ -21,9 +21,9 @@ repo_snapshot <- function(
   verbose = interactive()
 ) {
   types <- match.arg(types, several.ok = TRUE)
-  if (is.null(destdir)) {
-    destdir <- sub(".*//", "", repo)
-  }
+
+  destdir <- destdir %||% sub(".*//", "", repo)
+
   dir.create(destdir, showWarnings = FALSE, recursive = TRUE)
   not_empty <- length(fs::dir_ls(destdir)) > 0
   if (not_empty) {
