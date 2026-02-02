@@ -7,9 +7,10 @@
 \usage{
 repo_snapshot(
   repo,
-  types = NULL,
-  destdir = "snapshot",
-  bin_versions = r_version()
+  destdir = NULL,
+  types = c("src", "win", "mac", "linux", "wasm", "docs"),
+  bin_versions = r_version(),
+  verbose = interactive()
 )
 
 r_version()
@@ -17,14 +18,14 @@ r_version()
 \arguments{
 \item{repo}{url of the cran-like repository to snapshot}
 
-\item{types}{type of snapshot. Either \code{NULL} or one of "src", "win", "mac", "linux", "wasm", "docs".
-By default, if \code{NULL}, "win", "mac", "linux" snapshots will be downloaded.}
+\item{destdir}{path to directory where to save the snapshots}
 
-\item{destdir}{where to save the snapshots (path).}
+\item{types}{which files to include. Must be subset of "src", "win", "mac", "linux", "wasm", "docs".}
 
-\item{bin_versions}{vector with versions of R to download binary
-packages. The default is to download binaries for all available versions.
-Set to NULL to not download any binaries.}
+\item{bin_versions}{vector with versions of R to download binary packages.
+Set to NULL to download all binaries available.}
+
+\item{verbose}{print some progress}
 }
 \value{
 None, used for its side-effects.
@@ -34,9 +35,6 @@ Downloads a full copy (snapshot) of an R package repository.
 }
 \examples{
 \dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
-repo_snapshot(
-  "https://jeroen.r-universe.dev",
-   bin_versions = c("4.1", "4.2", "4.3")
-)
+repo_snapshot("https://jeroen.r-universe.dev")
 \dontshow{\}) # examplesIf}
 }
