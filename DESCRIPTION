@@ -21,11 +21,11 @@ Depends:
 Imports: 
     cli,
     curl,
+    fs,
     httr2,
     rlang,
     withr
 Suggests: 
-    fs,
     httptest2,
     knitr,
     rmarkdown,
